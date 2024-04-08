@@ -399,7 +399,7 @@
   "platform_customizations": {
     "custom_css": [
       ".multirow__inner {row-gap: 0;}",
-      ".button.button--primary {background-color: rgba(var(--color-accent-1)); color: rgba(var(--color-base-solid-button-labels));}"
+      ".button.button--secondary {background-color: rgba(var(--color-accent-1)); color: rgba(var(--color-base-solid-button-labels));}"
     ]
   }
 }
