@@ -4,6 +4,34 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_HKfkLi": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop"
+          }
+        },
+        "link_list_f3ALHz": {
+          "type": "link_list",
+          "settings": {
+            "heading": "About",
+            "menu": "about"
+          }
+        },
+        "link_list_89qgdz": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Account",
+            "menu": "account"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_HKfkLi",
+        "link_list_f3ALHz",
+        "link_list_89qgdz"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
