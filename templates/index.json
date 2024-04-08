@@ -335,6 +335,59 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "multicolumn_VVeKYj": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_k3pFVy": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_6xxXEx": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Ujznrf": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_k3pFVy",
+        "column_6xxXEx",
+        "column_Ujznrf"
+      ],
+      "settings": {
+        "title": "Reviews",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -344,6 +397,7 @@
     "rich_text_hM6UHz",
     "multirow_XkRHr8",
     "featured_blog_3f3xQy",
-    "multicolumn_xDUUgx"
+    "multicolumn_xDUUgx",
+    "multicolumn_VVeKYj"
   ]
 }
