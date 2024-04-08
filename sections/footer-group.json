@@ -2,6 +2,40 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "newsletter_TXXC3X": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_rLwqwQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe and Save",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_n7z7wq": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Stay in touch<\/p>"
+          }
+        },
+        "email_form_jT3DDx": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_rLwqwQ",
+        "paragraph_n7z7wq",
+        "email_form_jT3DDx"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -49,6 +83,7 @@
     }
   },
   "order": [
+    "newsletter_TXXC3X",
     "footer"
   ]
 }
