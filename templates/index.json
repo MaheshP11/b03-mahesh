@@ -181,6 +181,69 @@
         "padding_bottom": 52
       }
     },
+    "featured_product_xyqVB4": {
+      "type": "featured-product",
+      "blocks": {
+        "title_n9hNy8": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_YFqgDP": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker_JaajLj": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_pYqjeK": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_yhyj77": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_RqhWFh": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title_n9hNy8",
+        "price_YFqgDP",
+        "variant_picker_JaajLj",
+        "quantity_selector_pYqjeK",
+        "buy_buttons_yhyj77",
+        "share_RqhWFh"
+      ],
+      "settings": {
+        "product": "",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "multirow_XkRHr8": {
       "type": "multirow",
       "blocks": {
@@ -423,6 +486,7 @@
     "multicolumn_Uff9ka",
     "collection_list_CwTjwm",
     "rich_text_hM6UHz",
+    "featured_product_xyqVB4",
     "multirow_XkRHr8",
     "featured_blog_3f3xQy",
     "multicolumn_xDUUgx",

@@ -68,12 +68,20 @@
             "heading": "ACCOUNT",
             "menu": "account"
           }
+        },
+        "text_ieUrCf": {
+          "type": "text",
+          "settings": {
+            "heading": "COMPANY",
+            "subtext": "<p>Effortless is a quick-launch value concept that is optimized for success. <a href=\"#\" target=\"_blank\" title=\"#\">Learn more<\/a><\/p>"
+          }
         }
       },
       "block_order": [
         "link_list_HKfkLi",
         "link_list_f3ALHz",
-        "link_list_89qgdz"
+        "link_list_89qgdz",
+        "text_ieUrCf"
       ],
       "settings": {
         "color_scheme": "scheme-1",
