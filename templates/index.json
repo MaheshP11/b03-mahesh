@@ -55,6 +55,62 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "multicolumn_Uff9ka": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CwYNAY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/svgviewer-output_1.svg",
+            "title": "Quality",
+            "text": "<p>Exceptional quality from top <\/p><p>to bottom.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wGXUEt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/svgviewer-png-output_2.png",
+            "title": "Delivery",
+            "text": "<p>Fast and free delivery<\/p><p>worldwide.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rji7Tr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/svgviewer-png-output_1_1.png",
+            "title": "Guarantee",
+            "text": "<p>100% customer satisfaction<\/p><p>guaranteed.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CwYNAY",
+        "column_wGXUEt",
+        "column_rji7Tr"
+      ],
+      "settings": {
+        "title": "Why Choose Effortles?",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "scheme-469ddea7-d40d-4a7e-9b16-de27522d8a3e",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "collection_list_CwTjwm": {
       "type": "collection-list",
       "blocks": {
@@ -258,68 +314,15 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "slideshow_aDjEqF": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_UX3R3e": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_Xqekjx": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_UX3R3e",
-        "slide_Xqekjx"
-      ],
-      "settings": {
-        "layout": "grid",
-        "slide_height": "medium",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
     }
   },
   "order": [
     "slideshow_DV9bk9",
+    "multicolumn_Uff9ka",
     "collection_list_CwTjwm",
     "rich_text_hM6UHz",
     "featured_product_8Gd4Xp",
     "multirow_XkRHr8",
-    "featured_blog_3f3xQy",
-    "slideshow_aDjEqF"
+    "featured_blog_3f3xQy"
   ]
 }
