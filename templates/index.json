@@ -259,57 +259,16 @@
         "padding_bottom": 36
       }
     },
-    "slideshow_aDjEqF": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_UX3R3e": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_Xqekjx": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_UX3R3e",
-        "slide_Xqekjx"
-      ],
+    "first_section_wtfnwb": {
+      "type": "first-section",
       "settings": {
-        "layout": "grid",
-        "slide_height": "medium",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "image_desktop": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+        "image_mobile": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
+        "heading": "Business Formal Choices",
+        "description": "<p>Business Formal Choices<\/p>",
+        "button_lable": "Explore Now",
+        "button_link": "",
+        "image_position": "left"
       }
     }
   },
@@ -320,6 +279,6 @@
     "featured_product_8Gd4Xp",
     "multirow_XkRHr8",
     "featured_blog_3f3xQy",
-    "slideshow_aDjEqF"
+    "first_section_wtfnwb"
   ]
 }
