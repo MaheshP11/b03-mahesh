@@ -37,13 +37,6 @@
 
     {{ content_for_header }}
 
-<div id="popup-container" style="display:none;">
-   <div id="popup-content">
-       <p>This is your popup content.</p>
-      <button id="close-popup">Close</button>
-   </div>
-</div>
-
 <style>
   #popup-container {
     position: fixed;
@@ -64,6 +57,30 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
 </style>
+
+    <div id="popup-container" style="display:none;">
+   <div id="popup-content">
+       <p>This is your popup content.</p>
+      <button id="close-popup">Close</button>
+   </div>
+</div>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const popupContainer = document.getElementById("popup-container");
+    const closeBtn = document.getElementById("close-popup");
+
+    // Show popup when user interacts (e.g., clicks a button)
+    document.getElementById("trigger-popup").addEventListener("click", function() {
+      popupContainer.style.display = "flex";
+    });
+
+    // Close popup when close button is clicked
+    closeBtn.addEventListener("click", function() {
+      popupContainer.style.display = "none";
+    });
+  });
+</script>
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
