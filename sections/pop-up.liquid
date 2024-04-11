@@ -1,4 +1,4 @@
-<div class="popup-section--text-container">
+{% comment %} <div class="popup-section">
   {% if section.settings.image != blank %}
     <div class="pop-section--heading h1">{{ section.settings.heading }}</div>
   {% endif %}
@@ -12,6 +12,13 @@
       </a>
     </div>
   {% endif %}
+</div> {% endcomment %}
+
+<div class="popup">
+  {% render 'responsive-picture',
+  desktopImage: section.settings.image_desktop,
+  mobileImage: section.settings.image_mobile
+  %}
 </div>
 
 {% schema %}
