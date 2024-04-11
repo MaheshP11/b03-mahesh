@@ -11,7 +11,8 @@
       "type": "pop-up",
       "settings": {
         "heading": "Business Formal Choices",
-        "image_desktop": "shopify:\/\/shop_images\/Frame1_1.webp"
+        "image_desktop": "shopify:\/\/shop_images\/Frame1_1.webp",
+        "image_mobile": "shopify:\/\/shop_images\/Frame1_1.webp"
       }
     }
   },
