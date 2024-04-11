@@ -1,0 +1,36 @@
+<div class="popup-section--text-container">
+  {% if section.settings.heading != blank %}
+    <div class="pop-section--heading h1">{{ section.settings.heading }}</div>
+  {% endif %}
+  {% if section.settings.description != blank %}
+    <div class="first-section--description">{{ section.settings.description }}</div>
+  {% endif %}
+  {% if section.settings.button_lable != blank %}
+    <div class="first-section--button">
+      <a href="{{ section.settings.button_link }}" class="button {% if  section.settings.button_link == blank  %} disabled {% endif %}">
+        {{- section.settings.button_label -}}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+  {
+    "name": "pop up section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_desktop",
+        "label": "Desktop image",
+        "info": "Recommended dimensions: 1440 x 600"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile image",
+        "info": "Recommended dimensions: 600 x 400"
+      }]
+  }
+{% endschema %}
