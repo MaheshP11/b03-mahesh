@@ -1,26 +1,13 @@
-{% comment %} <div class="popup-section">
-  {% if section.settings.image != blank %}
-    <div class="pop-section--heading h1">{{ section.settings.heading }}</div>
-  {% endif %}
-  {% if section.settings.description != blank %}
-    <div class="first-section--description">{{ section.settings.description }}</div>
-  {% endif %}
-  {% if section.settings.button_lable != blank %}
-    <div class="first-section--button">
-      <a href="{{ section.settings.button_link }}" class="button {% if  section.settings.button_link == blank  %} disabled {% endif %}">
-        {{- section.settings.button_label -}}
-      </a>
-    </div>
-  {% endif %}
-</div> {% endcomment %}
-
 <div class="popup">
-  {% render 'responsive-picture',
-  desktopImage: section.settings.image_desktop,
-  mobileImage: section.settings.image_mobile
+  {% render 'responsive-picture'
+    ,
+ desktopImage: section.settings.image_desktop
+    ,
+ mobileImage: section.settings.image_mobile
   %}
 </div>
 
+<style></style>
 {% schema %}
   {
     "name": "Popup section",
