@@ -9,10 +9,13 @@
     },
     "pop_up_BPtt7U": {
       "type": "pop-up",
+      "custom_css": [
+        "img {width: 100%; height: 100%;}"
+      ],
       "settings": {
-        "heading": "Business Formal Choices",
-        "image_desktop": "shopify:\/\/shop_images\/Frame1_1.webp",
-        "image_mobile": "shopify:\/\/shop_images\/Frame1_1.webp"
+        "heading": "Popup section",
+        "image_desktop": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440_828d419b-ed09-45ad-83de-c7077a1a392a.jpg"
       }
     }
   },
