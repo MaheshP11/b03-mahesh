@@ -6,9 +6,17 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "pop_up_BPtt7U": {
+      "type": "pop-up",
+      "settings": {
+        "heading": "Business Formal Choices",
+        "image_desktop": "shopify:\/\/shop_images\/Frame1_1.webp"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "pop_up_BPtt7U"
   ]
 }
