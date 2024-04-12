@@ -8,28 +8,30 @@
 
 <div id="popupContainer" class="popup-container">
   <div class="popup-content">
-    <div>
-      <!-- Close button -->
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <!-- Heading -->
-      <h2>Subscribe to our Newsletter and Get 10% off for your next purchase</h2>
-      <!-- Paragraph -->
-      <p>Subscribe to our Newsletter and Get 10% off for your next purchase. Stay updated on our latest products and promotions.</p>
-      <!-- Form -->
-      <form id="subscribeForm" onsubmit="submitForm(event)">
-        <input
-          type="email"
-          id="emailInput"
-          placeholder="Enter your email"
-          required>
-        <button type="submit">Subscribe</button>
-      </form>
-      <div class="terms">
-        <p>By subscribing you agree to our
-          <a href="">terms</a>
-          and
-          <a href="">conditions.</a>
-        </p>
+    <div class="content">
+      <div>
+        <!-- Close button -->
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <!-- Heading -->
+        <h2>Subscribe to our Newsletter and Get 10% off for your next purchase</h2>
+        <!-- Paragraph -->
+        <p>Subscribe to our Newsletter and Get 10% off for your next purchase. Stay updated on our latest products and promotions.</p>
+        <!-- Form -->
+        <form id="subscribeForm" onsubmit="submitForm(event)">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email"
+            required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="terms">
+          <p>By subscribing you agree to our
+            <a href="">terms</a>
+            and
+            <a href="">conditions.</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -103,8 +105,10 @@
   document.addEventListener("DOMContentLoaded", function() {
   setTimeout(()=>
   {
-    if (shouldShowPopup) {
-    openPopup();}
+    const subscribedEmail = localStorage.getItem('subscribedEmail');
+   if (shouldShowPopup && !subscribedEmail) {
+    openPopup();
+   }
   },3000);
   });
   
@@ -128,14 +132,24 @@
   const email = document.getElementById('emailInput').value;
   
   // You can add further validation here before submitting the form
-  
+  const subscribedEmail = localStorage.getItem('subscribedEmail');
+  if (subscribedEmail && subscribedEmail === email) {
+    console.log('Email already subscribed:', email);
+    closePopup(); // Close the popup if the email is already subscribed
+    return;
+  }
   // For demonstration purposes, let's log the email value
-  console.log('Email submitted:', email);
+  localStorage.setItem('subscribedEmail', email);
+
+  // For demonstration purposes, let's log the email value
+  console.log('Email submitted and stored:', email);
   
   // Close the popup after form submission
   document.getElementById('popupContainer').style.display = 'none';
   }
 </script>
+
+
 {% schema %}
   {
     "name": "Popup section",
