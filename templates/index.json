@@ -115,8 +115,8 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
             "image_mobile": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
-            "heading": "",
-            "sub_heading": "",
+            "heading": "<p>Built for Comfort<\/p><p><\/p>",
+            "sub_heading": "Bringing you the best of ethically sourced fashion from the best designers",
             "button_label": "Shop Now",
             "button_link": ""
           }
