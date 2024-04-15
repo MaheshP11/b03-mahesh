@@ -14,38 +14,6 @@
         "type": "image_picker",
         "id": "popup_image",
         "label": "Popup image"
-      },
-      {
-        "type": "inline_richtext",
-        "id": "heading",
-        "label": "heading",
-        "default": "Subscribe to our Newsletter and Get 10% off for your next purchase"
-      },
-      {
-        "type": "text",
-        "id": "sub_heading",
-        "label": "sub_heading",
-        "default": "Subscribe to our Newsletter and Get 10% off for your next purchase. Stay updated on our latest products."
-      },
-      {
-        "type": "text",
-        "id": "button__label",
-        "label": "Button Label",
-        "default": "Shop Now"
-      }, {
-        "type": "url",
-        "id": "button_link",
-        "label": "Button Link"
-      }
-    ]
-  },
-  {
-    "name": "Popup",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "popup_image",
-        "label": "Popup image"
       }
     ]
   },
