@@ -8,6 +8,16 @@
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
+    "name": "popup",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "popup_image",
+        "label": "Popup image"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {
