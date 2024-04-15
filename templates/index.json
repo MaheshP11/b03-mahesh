@@ -113,6 +113,8 @@
         "block_zcgBww": {
           "type": "block",
           "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
             "heading": "",
             "sub_heading": "",
             "button_label": "Shop Now",
