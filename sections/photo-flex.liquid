@@ -1,20 +1,22 @@
 <div class="photo-flex-section">
-  <div class="top-row">
-    <div class="left-container">
-      <div class="content">
-        {% if section.blocks.settings.heading != null %}
+  <div class="photo-flex-section--top-row">
+    <div class="photo-flex-section--top-row--left-container">
+      <div class="photo-flex-section--top-row--left-container--content">
+        {% if section.blocks.settings.heading != blank %}
           <h2>{{ section.blocks.settings.heading }}</h2>
         {% endif %}
+        {% if section.blocks.settings.sub_heading != blank %}
+          <p>{{ section.blocks.settings.sub_heading }}</p>
+        {% endif %}
       </div>
-      <div class="image">
+      <div class="photo-flex-section--top-row--left-container--image">
         {% if section.blocks.settings.image_desktop != blank and section.blocks.settings.image_mobile != blank %}
-          <img
-            src="section.blocks.settings.image_desktop"
-            alt=""
-            srcset=""
-            height="100%"
-            width="100%"
-            100%>
+          {% render 'responsive-picture'
+            ,
+ desktopImage: section.blocks.settings.image_desktop
+            ,
+ mobileImage: section.blocks.settings.image_mobile
+          %}
         {% endif %}
       </div>
     </div>
