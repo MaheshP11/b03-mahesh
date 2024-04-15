@@ -109,10 +109,25 @@
     },
     "photo_flex_iRCGfT": {
       "type": "photo-flex",
+      "blocks": {
+        "block_zcgBww": {
+          "type": "block",
+          "settings": {
+            "heading": "",
+            "sub_heading": "",
+            "button_label": "Shop Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_zcgBww"
+      ],
       "custom_css": [
 
       ],
       "settings": {
+        "header": "hello"
       }
     }
   },
