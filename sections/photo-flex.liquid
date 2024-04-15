@@ -1,9 +1,39 @@
+<div class="photo-flex-section">
+  <div class="top-row">
+    <div class="left-container">
+      <div class="content">
+        {% if section.blocks.settings.heading != null %}
+          <h2>{{ section.blocks.settings.heading }}</h2>
+        {% endif %}
+      </div>
+      <div class="image">
+        {% if section.blocks.settings.image_desktop != blank and section.blocks.settings.imgae_mobile != blank %}
+          {% render 'responsive-picture'
+            ,
+ desktopImage: section.settings.image_desktop
+            ,
+ mobileImage: section.settings.image_mobile
+          %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="right-container"></div>
+  </div>
+  <div class="bottom-row"></div>
+</div>
+
+
 {% schema %}
   {
     "name": "Photo flex",
     "tag": "section",
     "class": "section",
-    "settings": [],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Photo flex section"
+      }
+    ],
     "blocks": [
       {
         "type": "block",
