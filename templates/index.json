@@ -109,24 +109,8 @@
     },
     "photo_flex_iRCGfT": {
       "type": "photo-flex",
-      "blocks": {
-        "block_k63VBW": {
-          "type": "block",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
-            "heading": "<p>huhuibui<\/p>",
-            "sub_heading": "",
-            "button_label": "Shop Now",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "block_k63VBW"
-      ],
       "custom_css": [
-        ".photo-flex-section {border: 1px solid black;}"
+
       ],
       "settings": {
       }
