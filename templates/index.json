@@ -113,7 +113,9 @@
         "block_k63VBW": {
           "type": "block",
           "settings": {
-            "heading": "<p>Photo flex<\/p>",
+            "image_desktop": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+            "heading": "<p>Built for comfort<\/p>",
             "sub_heading": "",
             "button_label": "Shop Now",
             "button_link": ""
