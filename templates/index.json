@@ -106,10 +106,30 @@
       "settings": {
         "rich_text": "<p>Featured In<\/p>"
       }
+    },
+    "photo_flex_iRCGfT": {
+      "type": "photo-flex",
+      "blocks": {
+        "block_k63VBW": {
+          "type": "block",
+          "settings": {
+            "heading": "<p>Photo flex<\/p>",
+            "sub_heading": "",
+            "button_label": "Shop Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_k63VBW"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "slideshow_DV9bk9",
-    "featured_in_FqTxdT"
+    "featured_in_FqTxdT",
+    "photo_flex_iRCGfT"
   ]
 }
