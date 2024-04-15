@@ -10,9 +10,9 @@
         {% if section.blocks.settings.image_desktop != blank and section.blocks.settings.image_mobile != blank %}
           {% render 'responsive-picture'
             ,
- desktopImage: section.settings.image_desktop
+ desktopImage: section.blocks.settings.image_desktop
             ,
- mobileImage: section.settings.image_mobile
+ mobileImage: section.blocks.settings.image_mobile
           %}
         {% endif %}
       </div>
