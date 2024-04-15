@@ -1,15 +1,21 @@
-<div>
-  <h1>
-    {{ section.settings.header }}
-  </h1>
-  <div>
-    {% for block in section.blocks %}
-      <div>
-        <h2>{{ block.settings.heading }}</h2>
+<div class="photo-flex-section">
+  {% for block in section.blocks %}
+    {% assign num = forloop.index | divided_by: 2 %}
+  <div class="photo-flex-section--info {%if num==0 %} row {% else %} row-reverse {% endif %} " >
+      <div class="photo-flex-section--image">
+        {% render 'responsive-picture'
+          , desktopImage: block.settings.image_desktop
+          , mobileImage: block.settings.image_mobile
+        %}
       </div>
-    {% endfor %}
-  </div>
+      <div class="photo-flex-section--content">
+        <h2>{{ block.settings.heading }}</h2>
+        <p>{{ block.settings.sub_heading }}</p>
+        <a href="{{block.settings.button_link}}">{{ block.settings.button_label }}</a>
+      </div>
+    </div>
 
+  {% endfor %}
 </div>
 
 {% schema %}

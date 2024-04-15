@@ -1,7 +1,12 @@
 {
   "current": {
+<<<<<<< Updated upstream
     "popup_image": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
     "logo": "shopify:\/\/shop_images\/Effortless_200x_2x_212c6e92-ba44-47c8-8517-98990653b567.webp",
+=======
+    "popup_image": "shopify://shop_images/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
+    "logo": "shopify://shop_images/Effortless_200x_2x_212c6e92-ba44-47c8-8517-98990653b567.webp",
+>>>>>>> Stashed changes
     "logo_width": 130,
     "type_header_font": "montserrat_n8",
     "heading_scale": 100,
@@ -99,7 +104,7 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -361,7 +366,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
