@@ -118,12 +118,24 @@
             "heading": "<p>Built for Comfort<\/p><p><\/p>",
             "sub_heading": "Bringing you the best of ethically sourced fashion from the best designers",
             "button_label": "Shop Now",
-            "button_link": ""
+            "button_link": "#"
+          }
+        },
+        "block_VnTmyw": {
+          "type": "block",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+            "heading": "<p>Better for the planet<\/p>",
+            "sub_heading": "Committed to sustainability from the ground up. From recycled packaging and fibers.",
+            "button_label": "Learn More",
+            "button_link": "#"
           }
         }
       },
       "block_order": [
-        "block_zcgBww"
+        "block_zcgBww",
+        "block_VnTmyw"
       ],
       "custom_css": [
 
