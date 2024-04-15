@@ -1,0 +1,53 @@
+{% schema %}
+  {
+    "name": "Photo flex",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "block",
+        "name": "row",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Desktop image",
+            "info": "Recommended dimensions: 1440 x 600"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Mobile image",
+            "info": "Recommended dimensions: 600 x 400"
+          },
+          {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "sub_heading",
+            "label": "Sub Heading"
+          }, {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Shop Now"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Photo flex"
+      }
+    ]
+
+  }
+{% endschema %}
