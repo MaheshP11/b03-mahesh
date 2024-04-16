@@ -1,10 +1,14 @@
 .photo-flex-section {
     padding: 5rem;
-    
   }
   .photo-flex-section--content {
     background-color: #2d2d2d;
+    padding: 5rem;
     flex-grow: 1;
+    font: 50px;
+  }
+  .photo-flex-section--content h2{
+    color: #ffffff;
   }
   .photo-flex-section--info-row div,
   .photo-flex-section--info-row-reverse div {
@@ -26,4 +30,9 @@
   .photo-flex-section--image img {
     width: 100%;
     height: 100%;
+  }
+
+  .photo-flex-section--content--heading > h2{
+    font-size: 50px;
+    width: 500px;
   }
