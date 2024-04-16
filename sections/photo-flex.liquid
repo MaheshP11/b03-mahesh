@@ -1,3 +1,5 @@
+{{ 'photo-flex.css' | asset_url | stylesheet_tag }}
+
 <div class="photo-flex-section">
   {% for block in section.blocks %}
     {% assign num = forloop.index | divided_by: 2 %}
@@ -18,28 +20,6 @@
   {% endfor %}
 </div>
 
-<style>
-  .photo-flex-section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .photo-flex-section--content {
-    background-color: #2d2d2d;
-  }
-  .photo-flex-section--info-row {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .photo-flex-section--info-row-reverse {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .photo-flex-section--image {
-    height: auto
-  }
-
-</style>
 {% schema %}
   {
     "name": "Photo flex",
