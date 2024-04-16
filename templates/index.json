@@ -143,11 +143,21 @@
       "settings": {
         "header": "Photo flex section"
       }
+    },
+    "custom_liquid_Hwqkaa": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% if customer.id %}\n  <p>Customer logged in<\/p>\n{% else %}\n  <p> Customer didn't logged in <\/p>\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "slideshow_DV9bk9",
     "featured_in_FqTxdT",
-    "photo_flex_iRCGfT"
+    "photo_flex_iRCGfT",
+    "custom_liquid_Hwqkaa"
   ]
 }
