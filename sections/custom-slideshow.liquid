@@ -1,101 +1,180 @@
+{{ 'custom-slideshow.js' | asset_url | stylesheet_tag }}
 
-{% style  %} 
-  .custom-slideshow--{{ section.id }}{
-        padding-top:{{ section.settings.padding_top | divided_by:2 }}px;
-        padding-bottom:{{ section.settings.padding_bottom | divided_by:2 }}px;
+{% liquid
+  assign autoPlay = section.settings.auto_play
+  assign autoPlayDuration = section.settings.auto_play_duration
+  assign showPagination = section.settings.show_pagination
+  assign paddingTop = section.settings.padding_top
+  assign paddingBottom = section.settings.padding_bottom
+  assign slideType = section.settings.slide_type
+  assign showArrows = section.settings.show_arrows
+%}
+
+{% capture sliderSettings %}
+  {
+    "autoplay":{{autoPlay}},
+    "pagination":{{showPagination}},
+    "speed":{{autoPlayDuration}},
+    "type":"{{slideType}}",
+    "arrows":{{showArrows}}
+  }
+{% endcapture %}
+
+{% style %}
+  .padding-{{ section.id }} {
+    padding-top: {{ paddingTop | divided_by:2 }}px;
+    padding-bottom: {{ paddingBottom | divided_by:2 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .padding-{{ section.id }} {
+      padding-top: {{ paddingTop }}px;
+      padding-bottom: {{ paddingBottom }}px;
     }
-    @media only screen and (max-width: 749px) {
-      .custom-slideshow--{{ section.id }}{
-        padding-top:{{ section.settings.padding_top | divided_by:2 }}px;
-        padding-bottom:{{ section.settings.padding_bottom | divided_by:2 }}px;
-    }
+
   }
 
 {% endstyle %}
 
-<div class="custom-slideshow custom-slideshow-wrapper page-width custom-slideshow--{{section.id}}">
-  
+<div class="custom-slideshow padding-{{ section.id }}">
+  <div class="page-width">
+    <splider-component>
+      <section
+        class="splide"
+        aria-label="Splide Basic HTML Example"
+        data-slider-settings='{{ sliderSettings }}'>
+        <div class="splide--track">
+          <ul class="splide--list">
+            {% for blocks in section.blocks %}
+              {% liquid
+                assign desktopImage = blocks.settings.image
+                assign mobileImage = blocks.settings.image_mobile
+                assign heading = blocks.settings.heading
+                assign preHeading = blocks.settings.pre_heading
+                assign colorSchema = blocks.settings.color_scheme
+                assign buttonLabel = blocks.settings.button_label
+                assign buttonUrl = blocks.settings.button_url
+                assign desktopContainerAllignment = blocks.settings.desktop_content_position
+                assign textAllignment = blocks.settings.desktop_text_allignment
+              %}
+
+              <li class="splide--slide color-{{ colorSchema.id }}">
+                <div class="custom-slideshow--image">
+                  {% if desktopImage != blank or mobileImage != blank %}
+                    {% render 'responsive-picture'
+                      , desktopImage: desktopImage
+                      , mobileImage: mobileImage %}
+                  {% else %}
+                    {{ 'hero-apparel-1' | placeholder_svg_tag }}
+                  {% endif %}
+                </div>
+
+                <div class="custom-slideshow--text-content-container {{ desktopContainerAllignment }}">
+                  <div class="custom-slideshow--text-content {{ textAllignment }}">
+                    {% if preHeading != blank %}
+                      <ul class="pre-heading">
+                        <li>{{ preHeading }}</li>
+                      </ul>
+                    {% endif %}
+                    {% if heading != blank %}
+                      <h2 class="h1 custom-slideshow--heading">{{ heading }}</h2>
+                    {% endif %}
+                    {% if buttonLabel != blank %}
+                      <a
+                        class="button"
+                        {% if buttonUrl != blank %}
+                        href="{{ buttonUrl }}"
+                        {% else %}
+                        role="link"
+                        aria-disabled="true"
+                        {% endif %}>
+                        <span>{{- buttonLabel -}}</span>
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </splider-component>
+  </div>
 </div>
-
-
 
 {% schema %}
   {
-    "name": "custom-slideshow",
+    "name": "Custom SlideShow",
     "tag": "section",
-    "class": "section",
     "settings": [
       {
         "type": "header",
-        "content": "Slider Options"
+        "content": "Slider options"
       },
       {
         "type": "checkbox",
-        "id": "autoplay",
-        "label": "Enable Autoplay",
-        "default": false
+        "label": "Enable autoplay",
+        "id": "auto_play",
+        "default": true
       },
       {
         "type": "checkbox",
-        "id": "show_pagination",
         "label": "Show dots",
-        "default": false
+        "id": "show_pagination",
+        "default": true
       },
       {
         "type": "checkbox",
+        "label": "Show arrows",
         "id": "show_arrows",
-        "label": "Show Arrows",
-        "default": false
+        "default": true
       }, {
         "type": "range",
-        "id": "auto_play_duration",
         "label": "Autoplay duration",
+        "id": "auto_play_duration",
+        "default": 1000,
         "min": 1000,
         "max": 5000,
         "step": 1000,
-        "unit": "ms",
-        "default": 2000
-      }, {
-        "type": "header",
-        "content": "Animation Options"
+        "unit": "sec"
       }, {
         "type": "select",
-        "id": "animation",
-        "label": "Animations",
-        "default": "fade",
+        "label": "Slider animation",
+        "id": "slide_type",
+        "default": "slide",
         "options": [
           {
-            "value": "fade",
-            "label": "fade"
+            "label": "Fade",
+            "value": "fade"
           }, {
-            "value": "loop",
-            "label": "loop"
+            "label": "Loop",
+            "value": "loop"
           }, {
-            "value": "slide",
-            "label": "slide"
+            "label": "Slide",
+            "value": "slide"
           }
         ]
       }, {
         "type": "header",
-        "content": "Section Padding"
+        "content": "Section padding"
       }, {
         "type": "range",
-        "id": "padding_top",
         "label": "Padding Top",
+        "id": "padding_top",
+        "default": 30,
         "min": 0,
         "max": 100,
-        "step": 10,
-        "unit": "px",
-        "default": 0
+        "step": 2,
+        "unit": "px"
       }, {
         "type": "range",
-        "id": "padding_bottom",
         "label": "Padding Bottom",
+        "id": "padding_bottom",
+        "default": 30,
         "min": 0,
         "max": 100,
-        "step": 10,
-        "unit": "px",
-        "default": 0
+        "step": 2,
+        "unit": "px"
       }
     ],
     "blocks": [
@@ -104,108 +183,103 @@
         "name": "Slide",
         "settings": [
           {
-            "type": "header",
-            "content": "Media Options"
+            "type": "image_picker",
+            "label": "Image",
+            "id": "image",
+            "info": "Image for Desktop"
           },
           {
             "type": "image_picker",
-            "id": "desktop_image",
-            "label": "Desktop Image",
-            "info": "Recommended Size:  1360 x 633 px"
+            "label": "Image (Mobile)",
+            "id": "image_mobile",
+            "info": "Image For Mobile"
           },
           {
-            "type": "image_picker",
-            "id": "mobile_image",
-            "label": "Mobile Image",
-            "info": "Recommended Size:  360 x 282 px"
-          },
-          {
-            "type": "header",
-            "content": "Text Customisation"
-          }, {
             "type": "text",
+            "label": "Pre heading",
             "id": "pre_heading",
-            "label": "Pre Heading",
-            "default": "Women's Apparel"
-          }, {
+            "default": "Trendy Classics"
+          },
+          {
             "type": "richtext",
-            "id": "heading",
             "label": "Heading",
-            "default": "<p>Heading Text</p>"
+            "id": "heading",
+            "default": "<p>Discover Signature Look: Fashion Forward and Fabulous!</p> "
           }, {
             "type": "text",
-            "id": "button_label",
             "label": "Button Label",
-            "default": "Explore More"
+            "id": "button_label",
+            "default": "Shop Now"
           }, {
             "type": "url",
-            "id": "button_link",
-            "label": "Button Links"
-          }, {
-            "type": "header",
-            "content": "Text Positions"
+            "label": "Button link",
+            "id": "button_url"
           }, {
             "type": "select",
-            "id": "text_position_selector",
-            "label": "Select Text Positions",
-            "default": "center-center",
+            "label": "Desktop Content Position",
+            "id": "desktop_content_position",
+            "default": "middle-center",
             "options": [
               {
-                "value": "top-left",
-                "label": "Top Left"
+                "label": "Top left",
+                "value": "top-left"
               },
               {
-                "value": "top-right",
-                "label": "Top Right"
-              },
-              {
-                "label": "Top Center",
+                "label": "Top center",
                 "value": "top-center"
               },
               {
-                "label": "Center Left",
-                "value": "Center-left"
+                "label": "Top right",
+                "value": "top-right"
+              },
+              {
+                "label": "Middle left",
+                "value": "middle-left"
               }, {
-                "label": "Center center",
-                "value": "center-center"
+                "label": "Middle center",
+                "value": "middle-center"
               }, {
-                "label": "Center Right",
-                "value": "center-right"
+                "label": "Middle right",
+                "value": "middle-right"
               }, {
-                "label": "Bottom Left",
+                "label": "Bottom left",
                 "value": "bottom-left"
               }, {
-                "label": "Bottom Right",
-                "value": "bottom-right"
-              }, {
-                "label": "Bottom Center",
+                "label": "Bottom center",
                 "value": "bottom-center"
+              }, {
+                "label": "Bottom right",
+                "value": "bottom-right"
               }
             ]
           }, {
             "type": "select",
-            "id": "desktop_content_allignment",
-            "label": "Desktop Content Allignment",
-            "default": "center",
+            "label": "Desktop Text Allignment",
+            "id": "desktop_text_allignment",
             "options": [
               {
-                "value": "left",
-                "label": "Left"
+                "label": "Left",
+                "value": "left"
               }, {
-                "value": "right",
-                "label": "Right"
+                "label": "Center",
+                "value": "center"
               }, {
-                "value": "center",
-                "label": "Center"
+                "label": "Right",
+                "value": "right"
               }
             ]
+          }, {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "Color Scheme",
+            "default": "background-1"
           }
         ]
       }
     ],
     "presets": [
       {
-        "name": "Custom Slideshow"
+        "name": "Custom SlideShow"
       }
     ]
   }
