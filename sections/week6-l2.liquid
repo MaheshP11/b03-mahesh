@@ -1,26 +1,21 @@
-{{ "week6-l2.css" | asset_url | stylesheet_tag }}
-<script src="{{ 'component-splide.js' | asset_url }}" defer></script>
-
+{{ 'week6-l2.css' | asset_url | stylesheet_tag }}
 {% style %}
   .custom-padding--{{ section.id }} {
     padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
     padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
   }
-  /* mobile first approach */
   @media screen and (min-width: 749px) {
-    .custom-padding--{{ section.id }} {
+    .custom-section-padding--{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
 {% endstyle %}
-
 <script src="{{ 'custom-slideshow.js' | asset_url }}" defer></script>
 {% liquid
   assign type =section.settings.Slide_animation
   assign pagination = section.settings.show_pagination
   assign perpage=section.settings.perpage
-  assign gap=section.settings.gap
 %}
 {%- capture splide_option -%}
     {
@@ -29,43 +24,37 @@
         "perPage":{{ perpage }}
     }
 {% endcapture %}
-
-
-<div class="testimonial-slider page-width custom-padding--{{ section.id }}">
-  <div class="testimonial-slider--main-image">
-    <img
-      src="{{ section.blocks.first.settings.main_image | img_url: 'master' }}"
-      alt="Main Image"
-      height=""
-      width="">
+<div class="week-6 page-width custom-section-padding--{{ section.id }}">
+  <div class="week-6-product">
+    {% render 'responsive-picture'
+      ,
+ desktopImage: section.blocks[0].settings.productImage
+      ,
+    %}
   </div>
-  <div class="testimonial-slider--main-content-slider">
-    <div class="testimonial-slider--heading-desc">
-      <h2 class="testimonial-slider--heading">{{ section.settings.section_heading }}</h2>
-      <p class="testimonial-slider--desc">{{ section.settings.section_description }}</p>
-    </div>
+  <div class="week-6--content">
+    <h1 class="week-6-content--heading">{{ section.settings.heading }}</h1>
+    <p class="week-6-content--description">{{ section.settings.description }}</p>
     <splider-component>
-      <div
-        class="splide"
-        id="testimonial-slider"
-        data-slider-options='{{ splide-options }}'>
+
+      <div class="splide" data-slider-settings='{{ splide_option }}'>
         <div class="splide__track">
-          <ul class="splide__list ">
+          <ul class="splide__list">
             {% for block in section.blocks %}
-              <li class="splide__slide">
-                <div class="testimonial-slider--slide-content">
-                  <p class="testimonial-slider--slide-para">{{ block.settings.testimonial_desc }}</p>
-                  <div class="testimonial-slider--author-content">
-                    <div class="testimonial-slider--author-image">
-                      <img
-                        src="{{ block.settings.author_image | img_url: 'master' }}"
-                        height="50"
-                        width="50"
-                        alt="Author Image">
+              <li class="splide__slide week-6-content--block " data-productImg="{{ block.settings.productImage }}">
+                <div>
+                  <span class="week-6-content-block--testimonialText">{{ block.settings.testimonialText }}</span>
+                  <div class="week-6-content-block--author">
+                    <div class="week-6-content-block-author--imageContainer">
+                      {% render 'responsive-picture'
+                        ,
+ desktopImage: block.settings.authorImage
+                        ,
+                      %}
                     </div>
-                    <div class="testimonial-slider--author-name-title">
-                      <h3 class="testimonial-slider--author-name">{{ block.settings.author_name }}</h3>
-                      <p class="testimonial-slider--authortitle">{{ block.settings.author_title }}</p>
+                    <div class=" week-6-content-block-author--details">
+                      <h4>{{ block.settings.authorName }}</h4>
+                      <p>{{ block.settings.authorTitle }}</p>
                     </div>
                   </div>
                 </div>
@@ -78,53 +67,59 @@
   </div>
 </div>
 
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('.splide', {
+      pagination: true,
+      perPage: 3,
+      gap: '60px',
+      breakpoints: {
+        425: {
+          perPage: 1,
+          gap: '20px',
+        },
+        768: {
+          perPage: 3,
+        },
+      },
+    }).mount();
+  });
+</script>
 {% schema %}
   {
-    "name": "Week6 L2",
+    "name": "week-6L2",
     "tag": "section",
-    "class": "section",
+    "class": "Section",
     "settings": [
       {
-        "type": "header",
-        "content": "Background color"
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Testimonials"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "description",
+        "default": "describe"
       },
       {
         "type": "color_background",
-        "id": "color_background",
-        "label": "Background color"
+        "id": "color-bg",
+        "label": "Background"
       },
       {
         "type": "header",
-        "content": "Section details"
-      },
-      {
-        "type": "text",
-        "id": "section_heading",
-        "label": "Section heading",
-        "default": "Testimonials"
-      }, {
-        "type": "text",
-        "id": "section_description",
-        "label": "Section description",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      }, {
-        "type": "header",
-        "content": "Slider options"
+        "content": "splider options"
       }, {
         "type": "checkbox",
         "id": "auto_play",
-        "label": "Enable autoplay",
+        "label": "Enable auto play",
         "default": false
       }, {
         "type": "checkbox",
         "id": "show_pagination",
         "label": "Show dots",
-        "default": false
-      }, {
-        "type": "checkbox",
-        "id": "rewind",
-        "label": "Rewind",
         "default": false
       }, {
         "type": "checkbox",
@@ -141,19 +136,27 @@
         "label": "Autoplay duration",
         "default": 2000
       }, {
+        "type": "range",
+        "id": "perpage",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "label": "perpage",
+        "default": 2
+      }, {
         "type": "header",
         "content": "Animation options"
       }, {
         "type": "select",
-        "id": "slide_animation",
-        "label": "Slider animation",
+        "id": "Slide_animation",
+        "label": "Slide animation",
         "options": [
           {
             "value": "fade",
             "label": "Fade"
           }, {
             "value": "slide",
-            "label": "Slide"
+            "label": "slide"
           }, {
             "value": "loop",
             "label": "Loop"
@@ -170,8 +173,8 @@
         "max": 100,
         "step": 10,
         "unit": "px",
-        "label": "Padding top",
-        "default": 30
+        "label": "padding top",
+        "default": 0
       }, {
         "type": "range",
         "id": "padding_bottom",
@@ -179,8 +182,8 @@
         "max": 100,
         "step": 10,
         "unit": "px",
-        "label": "Padding bottom",
-        "default": 30
+        "label": "padding bottom",
+        "default": 0
       }
     ],
     "blocks": [
@@ -190,57 +193,57 @@
         "settings": [
           {
             "type": "header",
-            "content": "Media options"
+            "content": "Media positions"
           },
           {
             "type": "image_picker",
-            "id": "main_image",
-            "label": "Main Image"
+            "id": "productImage",
+            "label": "Product image",
+            "info": "Recommended size :1360  x 633 px."
           },
           {
             "type": "image_picker",
-            "id": "author_image",
-            "label": "Author Image"
+            "id": "authorImage",
+            "label": "Author image",
+            "info": "Recommended size :1360  x 633 px."
           },
           {
             "type": "header",
             "content": "Text customization"
           }, {
-            "type": "text",
-            "id": "testimonial_desc",
-            "label": "Testimonial description",
-            "default": "“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque  “"
+            "type": "richtext",
+            "id": "testimonialText",
+            "label": "Testimonial text",
+            "default": "<p>“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque “</p>"
           }, {
             "type": "text",
-            "id": "author_name",
+            "id": "authorName",
             "label": "Author name",
             "default": "Mr. John Doe"
           }, {
             "type": "text",
-            "id": "author_title",
+            "id": "authorTitle",
             "label": "Author title",
-            "default": "Clients"
+            "default": "clients",
+            "placeholder": "clients"
           }, {
             "type": "header",
-            "content": "Background color for card"
+            "content": "Background customization"
           }, {
             "type": "color_background",
-            "id": "bg_card",
-            "label": "Background color for card"
-          }, {
-            "type": "header",
-            "content": "Background color for active card"
+            "id": "card-bg",
+            "label": "Card background"
           }, {
             "type": "color_background",
-            "id": "bg_active_card",
-            "label": "Background color for Active card"
+            "id": "card-active-bg",
+            "label": "Active card background"
           }
         ]
       }
     ],
     "presets": [
       {
-        "name": "Week6 L2"
+        "name": "week-6L2"
       }
     ]
   }
