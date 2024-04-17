@@ -1,6 +1,6 @@
 .photo-flex-section {
     padding: 5rem;
-    box-shadow: 10px 10px black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .photo-flex-section--content {
     background-color: #2d2d2d;
@@ -54,6 +54,7 @@
   }
   .photo-flex-section--content--button > a{
          text-decoration: none;
+         font-size: 15px;
          color: #ffffff;
          background-color: #3c837c;
          padding: 15px 30px;
