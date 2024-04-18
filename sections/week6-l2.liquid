@@ -1,148 +1,140 @@
-{{ 'week6-l2.css' | asset_url | stylesheet_tag }}
 {% style %}
   .custom-padding--{{ section.id }} {
     padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
     padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
   }
+  .active-slide {
+    background: {{ section.blocks.first.settings.color_active }};
+  }
+  /* mobile first approach */
   @media screen and (min-width: 749px) {
-    .custom-section-padding--{{ section.id }} {
+    .custom-padding--{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
 {% endstyle %}
-<script src="{{ 'custom-slideshow.js' | asset_url }}" defer></script>
-{% liquid
-  assign type =section.settings.Slide_animation
-  assign pagination = section.settings.show_pagination
-  assign perpage=section.settings.perpage
-%}
-{%- capture splide_option -%}
-    {
-        "type": "{{ type }}",
-        "pagination": {{ pagination }},
-        "perPage":{{ perpage }}
-    }
-{% endcapture %}
-<div class="week-6 page-width custom-section-padding--{{ section.id }}">
-  <div class="week-6-product">
-    {% render 'responsive-picture'
-      ,
- desktopImage: section.blocks[0].settings.productImage
-      ,
-    %}
-  </div>
-  <div class="week-6--content">
-    <h1 class="week-6-content--heading">{{ section.settings.heading }}</h1>
-    <p class="week-6-content--description">{{ section.settings.description }}</p>
-    <splider-component>
 
-      <div class="splide" data-slider-settings='{{ splide_option }}'>
-        <div class="splide__track">
-          <ul class="splide__list">
-            {% for block in section.blocks %}
-              <li class="splide__slide week-6-content--block " data-productImg="{{ block.settings.productImage }}">
-                <div>
-                  <span class="week-6-content-block--testimonialText">{{ block.settings.testimonialText }}</span>
-                  <div class="week-6-content-block--author">
-                    <div class="week-6-content-block-author--imageContainer">
-                      {% render 'responsive-picture'
-                        ,
- desktopImage: block.settings.authorImage
-                        ,
-                      %}
-                    </div>
-                    <div class=" week-6-content-block-author--details">
-                      <h4>{{ block.settings.authorName }}</h4>
-                      <p>{{ block.settings.authorTitle }}</p>
+{{ 'week6-l2.css' | asset_url | stylesheet_tag }}
+<script src="{{ "component-splide.js"  | asset_url }}" defer></script>
+{% liquid
+  assign type = section.settings.Slide_animation
+  assign pagination = section.settings.show_pagination
+  assign arrows = section.settings.show_arrows
+%}
+
+{%- capture splide_option -%}
+
+  {
+    "type": "{{ type }}",
+    "pagination": {{ pagination }},
+    "arrows": {{ arrows }},
+    "per_page":1,
+    "breakpoints" : {
+        "768": {
+          "perPage": 1
+        },
+        "480": {
+          "perPage": 1
+        }
+      }
+  }
+  {%- endcapture -%}
+<div class="week6-l2">
+  <div class="imageflexgrow">
+    {% for block in section.blocks %}
+      <img
+        src="{{ block.settings.desktop_image | image_url }}"
+        alt="Slide Image"
+        height=""
+        width=""
+        class="desktopimgaes">
+    {% endfor %}
+  </div>
+
+  <splider-component>
+    <div class="headerdescriptionweek">
+      <h1 class="custom_heading_author">{{ section.settings.Custom_heading_week }}</h1>
+      <p class="sectiondescription">{{ section.settings.custom_desciption_week }}</p>
+    </div>
+
+
+    <div class="topslide--weekslide splide" data-slider-settings='{{ splide_option }}'>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class=" weekslideuages splide__slide">
+              <div class="splide-content-blog splide-content">
+                <p>{{ block.settings.testimonals_header }}</p>
+                <div class="glowflexview">
+                  <div class="imageviewpointflex">
+                    <img
+                      src="{{ block.settings.testimonals_image | image_url }}"
+                      alt="Slide Image"
+                      height="200px"
+                      width="200px">
+                    <div class="author_fieldheader">
+                      <h6>
+                        {{ block.settings.testimonals_author_name }}
+
+                      </h6>
+                      <h6>
+                        {{ block.settings.testimonals_author_description }}</h6>
                     </div>
                   </div>
                 </div>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
-    </splider-component>
-  </div>
+    </div>
+  </splider-component>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    new Splide('.splide', {
-      pagination: true,
-      perPage: 3,
-      gap: '60px',
-      breakpoints: {
-        425: {
-          perPage: 1,
-          gap: '20px',
-        },
-        768: {
-          perPage: 3,
-        },
-      },
-    }).mount();
-  });
-</script>
+
 {% schema %}
   {
-    "name": "week-6L2",
+    "name": "Week-6 l2",
     "tag": "section",
     "class": "Section",
     "settings": [
       {
         "type": "text",
-        "id": "heading",
+        "id": "Custom_heading_week",
         "label": "Heading",
         "default": "Testimonials"
       },
       {
         "type": "textarea",
-        "id": "description",
-        "label": "description",
-        "default": "describe"
+        "id": "custom_desciption_week",
+        "label": "Description",
+        "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
       },
+
       {
         "type": "color_background",
-        "id": "color-bg",
+        "id": "color_week_background",
         "label": "Background"
       },
       {
-        "type": "header",
-        "content": "splider options"
-      }, {
-        "type": "checkbox",
-        "id": "auto_play",
-        "label": "Enable auto play",
-        "default": false
-      }, {
-        "type": "checkbox",
-        "id": "show_pagination",
-        "label": "Show dots",
-        "default": false
-      }, {
-        "type": "checkbox",
-        "id": "show_arrows",
-        "label": "Show arrows",
-        "default": false
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "default": 0
       }, {
         "type": "range",
-        "id": "auto_play_duration",
-        "min": 1000,
-        "max": 5000,
-        "step": 1000,
-        "unit": "sec",
-        "label": "Autoplay duration",
-        "default": 2000
-      }, {
-        "type": "range",
-        "id": "perpage",
-        "min": 1,
-        "max": 4,
-        "step": 1,
-        "label": "perpage",
-        "default": 2
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "default": 0
       }, {
         "type": "header",
         "content": "Animation options"
@@ -164,26 +156,52 @@
         ],
         "default": "slide"
       }, {
+        "type": "checkbox",
+        "id": "show_pagination",
+        "label": "Show dots",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show Arrows",
+        "default": false
+      }, {
+        "type": "range",
+        "id": "auto_play_duration",
+        "label": "Autoplay duration",
+        "min": 1000,
+        "max": 5000,
+        "step": 1000,
+        "unit": "ms",
+        "default": 2000
+      }, {
+        "type": "range",
+        "id": "per_page",
+        "label": "perpage",
+        "min": 1,
+        "max": 5,
+        "step": 0.5,
+        "default": 1.5
+      }, {
         "type": "header",
-        "content": "Section padding"
+        "content": "Animation Options"
       }, {
-        "type": "range",
-        "id": "padding_top",
-        "min": 0,
-        "max": 100,
-        "step": 10,
-        "unit": "px",
-        "label": "padding top",
-        "default": 0
-      }, {
-        "type": "range",
-        "id": "padding_bottom",
-        "min": 0,
-        "max": 100,
-        "step": 10,
-        "unit": "px",
-        "label": "padding bottom",
-        "default": 0
+        "type": "select",
+        "id": "animation",
+        "label": "Animations",
+        "default": "fade",
+        "options": [
+          {
+            "value": "fade",
+            "label": "fade"
+          }, {
+            "value": "loop",
+            "label": "loop"
+          }, {
+            "value": "slide",
+            "label": "slide"
+          }
+        ]
       }
     ],
     "blocks": [
@@ -197,53 +215,52 @@
           },
           {
             "type": "image_picker",
-            "id": "productImage",
-            "label": "Product image",
+            "id": "desktop_image",
+            "label": "desktop_image",
             "info": "Recommended size :1360  x 633 px."
           },
           {
             "type": "image_picker",
-            "id": "authorImage",
-            "label": "Author image",
+            "id": "testimonals_image",
+            "label": "testimonals_image",
             "info": "Recommended size :1360  x 633 px."
           },
           {
-            "type": "header",
-            "content": "Text customization"
-          }, {
             "type": "richtext",
-            "id": "testimonialText",
-            "label": "Testimonial text",
-            "default": "<p>“ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque “</p>"
+            "id": "testimonals_header",
+            "label": "headers",
+            "default": "<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>"
           }, {
             "type": "text",
-            "id": "authorName",
-            "label": "Author name",
-            "default": "Mr. John Doe"
+            "id": "testimonals_author_name",
+            "label": "authorname",
+            "default": "<p>Mr.Jhon Doe</p>"
           }, {
             "type": "text",
-            "id": "authorTitle",
-            "label": "Author title",
-            "default": "clients",
-            "placeholder": "clients"
+            "id": "testimonals_author_description",
+            "label": "authordescription",
+            "default": "<p>Clients</p>"
           }, {
             "type": "header",
-            "content": "Background customization"
+            "content": "BackgroundActive"
           }, {
             "type": "color_background",
-            "id": "card-bg",
-            "label": "Card background"
+            "id": "color_active",
+            "label": "Backgroundactive"
+          }, {
+            "type": "header",
+            "content": "BackgroundNormal"
           }, {
             "type": "color_background",
-            "id": "card-active-bg",
-            "label": "Active card background"
+            "id": "color_normal",
+            "label": "Backgroundnormal"
           }
         ]
       }
     ],
     "presets": [
       {
-        "name": "week-6L2"
+        "name": "Week-6 l2"
       }
     ]
   }
