@@ -8,20 +8,68 @@
         "padding_bottom": 0
       }
     },
-    "pop_up_BPtt7U": {
-      "type": "pop-up",
-      "custom_css": [
-        "img {width: 100%; height: 100vh; padding-left: 40px; padding-right: 40px;}"
+    "week6_l2_cQteWr": {
+      "type": "week6-l2",
+      "blocks": {
+        "slide_bBrmmC": {
+          "type": "Slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/f95f7fdbbfc4dd291173284893687a4c.jpg",
+            "testimonals_image": "shopify://shop_images/Rectangle_8_1.png",
+            "testimonals_header": "<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>",
+            "testimonals_author_name": "Mr.Jhon Doe",
+            "testimonals_author_description": "Clients",
+            "color_active": "",
+            "color_normal": ""
+          }
+        },
+        "slide_94A4th": {
+          "type": "Slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/ripe-red-strawberries-in-a-white-bowl.jpg",
+            "testimonals_image": "shopify://shop_images/Rectangle_8.png",
+            "testimonals_header": "<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>",
+            "testimonals_author_name": "Mr.Jhon Doe",
+            "testimonals_author_description": "Clients",
+            "color_active": "",
+            "color_normal": ""
+          }
+        },
+        "slide_DcEc3C": {
+          "type": "Slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/pub-food-spread.jpg",
+            "testimonals_image": "shopify://shop_images/Rectangle_8_1.png",
+            "testimonals_header": "<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>",
+            "testimonals_author_name": "Mr.Jhon Doe",
+            "testimonals_author_description": "Clients",
+            "color_active": "",
+            "color_normal": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_bBrmmC",
+        "slide_94A4th",
+        "slide_DcEc3C"
       ],
       "settings": {
-        "heading": "Popup section",
-        "image_desktop": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440_828d419b-ed09-45ad-83de-c7077a1a392a.jpg"
+        "Custom_heading_week": "Testimonials",
+        "custom_desciption_week": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+        "color_week_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "Slide_animation": "slide",
+        "show_pagination": true,
+        "show_arrows": false,
+        "auto_play_duration": 2000,
+        "per_page": 1.5,
+        "animation": "fade"
       }
     }
   },
   "order": [
     "main",
-    "pop_up_BPtt7U"
+    "week6_l2_cQteWr"
   ]
 }
