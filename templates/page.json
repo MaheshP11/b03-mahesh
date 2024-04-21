@@ -26,7 +26,7 @@
         "slide_94A4th": {
           "type": "Slide",
           "settings": {
-            "desktop_image": "shopify://shop_images/ripe-red-strawberries-in-a-white-bowl.jpg",
+            "desktop_image": "shopify://shop_images/moroccan-meal-in-tagine.jpg",
             "testimonals_image": "shopify://shop_images/Rectangle_8.png",
             "testimonals_header": "<p> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>",
             "testimonals_author_name": "Mr.Jhon Doe",
@@ -66,10 +66,20 @@
         "per_page": 1.5,
         "animation": "fade"
       }
+    },
+    "custom_newsletter_iQCxMF": {
+      "type": "custom-newsletter",
+      "settings": {
+        "newsletter_heading": "Subscribe to Our Newsletter",
+        "button_label": "Subscribe",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
     }
   },
   "order": [
     "main",
-    "week6_l2_cQteWr"
+    "week6_l2_cQteWr",
+    "custom_newsletter_iQCxMF"
   ]
 }
