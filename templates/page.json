@@ -18,10 +18,43 @@
         "image_desktop": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440.jpg",
         "image_mobile": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440_828d419b-ed09-45ad-83de-c7077a1a392a.jpg"
       }
+    },
+    "week7_l2_8rx7Am": {
+      "type": "week7-l2",
+      "blocks": {
+        "dots_irV3EK": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 20,
+            "primary_top_position": 20,
+            "dot_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "dots_irV3EK"
+      ],
+      "settings": {
+        "heading": "Shop the look",
+        "desktop_image": "shopify:\/\/shop_images\/background-image.png",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "product_list": [
+
+        ],
+        "auto_play": false,
+        "show_pagination": false,
+        "show_arrows": false,
+        "auto_play_duration": 2000,
+        "perpage": 2,
+        "gap": 5,
+        "Slide_animation": "slide"
+      }
     }
   },
   "order": [
     "main",
-    "pop_up_BPtt7U"
+    "pop_up_BPtt7U",
+    "week7_l2_8rx7Am"
   ]
 }
