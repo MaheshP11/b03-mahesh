@@ -56,7 +56,10 @@
         "padding_top": 30,
         "padding_bottom": 30,
         "product_list": [
-
+          "goggles",
+          "skate-board",
+          "winter-cap",
+          "winter-jacket"
         ],
         "auto_play": false,
         "show_pagination": false,
