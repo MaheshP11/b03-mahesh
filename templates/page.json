@@ -18,10 +18,19 @@
             "primary_top_position": 20,
             "dot_product": "goggles"
           }
+        },
+        "dots_JMTBNN": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 20,
+            "primary_top_position": 20,
+            "dot_product": "winter-cap"
+          }
         }
       },
       "block_order": [
-        "dots_irV3EK"
+        "dots_irV3EK",
+        "dots_JMTBNN"
       ],
       "settings": {
         "heading": "Shop the look",
