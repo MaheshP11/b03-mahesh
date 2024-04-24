@@ -10,46 +10,6 @@
     },
     "week7_l2_8rx7Am": {
       "type": "week7-l2",
-      "blocks": {
-        "dots_irV3EK": {
-          "type": "Dots",
-          "settings": {
-            "primary_left_position": 20,
-            "primary_top_position": 20,
-            "dot_product": "goggles"
-          }
-        },
-        "dots_JMTBNN": {
-          "type": "Dots",
-          "settings": {
-            "primary_left_position": 20,
-            "primary_top_position": 20,
-            "dot_product": "winter-cap"
-          }
-        },
-        "dots_6UAC9C": {
-          "type": "Dots",
-          "settings": {
-            "primary_left_position": 20,
-            "primary_top_position": 20,
-            "dot_product": "skate-board"
-          }
-        },
-        "dots_dipaYA": {
-          "type": "Dots",
-          "settings": {
-            "primary_left_position": 20,
-            "primary_top_position": 20,
-            "dot_product": "winter-jacket"
-          }
-        }
-      },
-      "block_order": [
-        "dots_irV3EK",
-        "dots_JMTBNN",
-        "dots_6UAC9C",
-        "dots_dipaYA"
-      ],
       "settings": {
         "heading": "Shop the look",
         "desktop_image": "shopify:\/\/shop_images\/background-image.png",
