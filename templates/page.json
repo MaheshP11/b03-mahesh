@@ -12,7 +12,11 @@
       "type": "week7-l2",
       "settings": {
         "heading": "Shop the look",
+<<<<<<< HEAD
         "desktop_image": "shopify:\/\/shop_images\/background-image.png",
+=======
+        "desktop_image": "shopify://shop_images/background-image.png",
+>>>>>>> e8c0d51 (week7)
         "padding_top": 30,
         "padding_bottom": 30,
         "product_list": [
