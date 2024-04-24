@@ -1,0 +1,39 @@
+<div class="custom-product">
+  <div class="custom-product--product-card">
+    <div class="custom-product--product-card--image">
+      {% for product in section.settings.product-list %}
+        {% render 
+ 'product-card'
+          , product: product %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-product--product-card {}
+.custom-product--product-card--image {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 25%;
+}
+</style>
+{% schema %}
+  {
+    "name": "custom-product",
+    "settings": [
+      {
+        "type": "product_list",
+        "id": "product-list",
+        "label": "Product list"
+      }
+    ],
+    "presets": [
+      {
+        "name": "custom-product"
+      }
+    ]
+  }
+{% endschema %}

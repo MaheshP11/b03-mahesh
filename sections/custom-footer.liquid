@@ -1,0 +1,125 @@
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-footer">
+  <div class="custom-footer--email-inputContainer">
+    {% form 'customer'
+      , class: 'newsletter-form' %}
+      <input
+        type="hidden"
+        name="contact[tags]"
+        value="newsletter">
+      <div>
+        <input
+          id="NewsletterForm--{{ section.id }}"
+          type="email"
+          name="contact[email]"
+          class="custom-footer-email-inputContainer--input"
+          placeholder="Email address"
+          value="{{ form.email }}"
+          aria-required="true"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          {% if form.errors %}
+          autofocus
+          aria-invalid="true"
+          aria-describedby="Newsletter-error--{{ section.id }}"
+          {% elsif form.posted_successfully? %}
+          aria-describedby="Newsletter-success--{{ section.id }}"
+          {% endif %}
+          required>
+      </div>
+      <button
+        type="submit"
+        class="custom-footer--email-inputContainer--button button"
+        name="commit"
+        id="Subscribe"
+        aria-label="{{ 'newsletter.button_label' | t }}">
+        {{ section.settings.button_label }}
+      </button>
+      {%- if form.errors -%}
+        <small class="newsletter-form_message form_message" id="Newsletter-error--{{ section.id }}">
+          {%- render 'icon-error' -%}
+          {{- form.errors.translated_fields.email | capitalize }}
+          {{ form.errors.messages.email -}}
+        </small>
+      {%- endif -%}
+      {%- if form.posted_successfully? -%}
+        <h3
+          class="newsletter-form_message newsletter-formmessage--success form_message"
+          id="Newsletter-success--{{ section.id }}"
+          tabindex="-1"
+          autofocus>
+          {% render 'icon-success' -%}
+          {{- 'newsletter.success' | t }}
+        </h3>
+      {%- endif -%}
+    {% endform %}
+  </div>
+  <div class="custom-footer--navContainer">
+    {% for block in section.blocks %}
+      {{ block.settings.title }}
+      {%- if block.settings.list != blank -%}
+        <ul class="custom-footer-navContainer--block">
+          {%- for link in block.settings.list.links -%}
+            <li style="list-style: none;">
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "custom Footer section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Store image"
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Subscribe"
+      }, {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }, {
+        "type": "text",
+        "id": "information",
+        "label": "Information"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "footer-block",
+        "name": "Footer block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "placeholder": "Contact"
+          }, {
+            "type": "link_list",
+            "id": "list",
+            "label": "options"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "custom Footer section"
+      }
+    ]
+  }
+{% endschema %}
