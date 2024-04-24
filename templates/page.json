@@ -8,15 +8,51 @@
         "padding_bottom": 0
       }
     },
-    "week7_l2_8rx7Am": {
+    "week7_l2_azCxjp": {
       "type": "week7-l2",
+      "blocks": {
+        "dots_KAVHjE": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 42,
+            "primary_top_position": 19,
+            "dot_product": "goggles"
+          }
+        },
+        "dots_XDFPPH": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 93,
+            "primary_top_position": 67,
+            "dot_product": "skate-board"
+          }
+        },
+        "dots_iJ4jxH": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 36,
+            "primary_top_position": 9,
+            "dot_product": "winter-cap"
+          }
+        },
+        "dots_xAHREn": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 26,
+            "primary_top_position": 41,
+            "dot_product": "winter-jacket"
+          }
+        }
+      },
+      "block_order": [
+        "dots_KAVHjE",
+        "dots_XDFPPH",
+        "dots_iJ4jxH",
+        "dots_xAHREn"
+      ],
       "settings": {
         "heading": "Shop the look",
-<<<<<<< HEAD
-        "desktop_image": "shopify:\/\/shop_images\/background-image.png",
-=======
         "desktop_image": "shopify://shop_images/background-image.png",
->>>>>>> e8c0d51 (week7)
         "padding_top": 30,
         "padding_bottom": 30,
         "product_list": [
@@ -37,6 +73,6 @@
   },
   "order": [
     "main",
-    "week7_l2_8rx7Am"
+    "week7_l2_azCxjp"
   ]
 }
