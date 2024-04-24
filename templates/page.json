@@ -8,17 +8,6 @@
         "padding_bottom": 0
       }
     },
-    "pop_up_BPtt7U": {
-      "type": "pop-up",
-      "custom_css": [
-        "img {width: 100%; height: 100vh; padding-left: 40px; padding-right: 40px;}"
-      ],
-      "settings": {
-        "heading": "Popup section",
-        "image_desktop": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/pexels-todd-trapani-1420440_828d419b-ed09-45ad-83de-c7077a1a392a.jpg"
-      }
-    },
     "week7_l2_8rx7Am": {
       "type": "week7-l2",
       "blocks": {
@@ -27,7 +16,7 @@
           "settings": {
             "primary_left_position": 20,
             "primary_top_position": 20,
-            "dot_product": ""
+            "dot_product": "goggles"
           }
         }
       },
@@ -54,7 +43,6 @@
   },
   "order": [
     "main",
-    "pop_up_BPtt7U",
     "week7_l2_8rx7Am"
   ]
 }
