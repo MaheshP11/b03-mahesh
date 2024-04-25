@@ -15,29 +15,48 @@
           "type": "Dots",
           "settings": {
             "primary_left_position": 37,
-            "primary_top_position": 19,
+            "primary_top_position": 24,
             "dot_product": "goggles"
           }
         },
         "dots_MJrKye": {
           "type": "Dots",
           "settings": {
-            "primary_left_position": 39,
-            "primary_top_position": 12,
+            "primary_left_position": 34,
+            "primary_top_position": 13,
             "dot_product": "winter-cap"
+          }
+        },
+        "dots_TG3KUJ": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 20,
+            "primary_top_position": 37,
+            "dot_product": "winter-jacket"
+          }
+        },
+        "dots_9KVJX8": {
+          "type": "Dots",
+          "settings": {
+            "primary_left_position": 83,
+            "primary_top_position": 78,
+            "dot_product": "skate-board"
           }
         }
       },
       "block_order": [
         "dots_NRmB93",
-        "dots_MJrKye"
+        "dots_MJrKye",
+        "dots_TG3KUJ",
+        "dots_9KVJX8"
       ],
       "settings": {
         "desktop_image": "shopify://shop_images/background-image.png",
         "product_list": [
           "goggles",
           "skate-board",
-          "winter-cap"
+          "winter-cap",
+          "winter-jacket"
         ],
         "auto_play": false,
         "show_pagination": false,
