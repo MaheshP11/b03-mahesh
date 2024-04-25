@@ -1,5 +1,4 @@
 {{ "week7-l2.css" | asset_url | stylesheet_tag }}
-
 {% style %}
     .padding-{{ section.id }} {
       padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
@@ -89,7 +88,7 @@
       </div>
     </div>
   </div>
-
+  
   {% liquid
     assign autoPlay=section.settings.auto_play
     assign type = section.settings.Slide_animation
@@ -106,23 +105,26 @@
     "gap":{{gap}}
   }
   {% endcapture %}
-  <div class="splide-card-container product-card">
-    <splider-component>
-      <div class="splide" data-slider-settings='{{ splide_option }}'>
-        <div class="splide__track">
-          <ul class="splide__list">
-            {% for product in section.settings.product_list %}
-              <li class="splide__slide">
-                {% render
-                  "product-card", product:product
-                %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
+  <div class="splide-card-container product-card ">
+        <splider-component>
+          <div class="splide" data-slider-settings='{{ splide_option }}'>
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for product in section.settings.product_list %}
+                  <li class="splide__slide">
+                    {% comment %} {% render
+                      "product-card", product:product
+                    %} {% endcomment %}
+                    {{product.title}}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </splider-component>
       </div>
-    </splider-component>
-  </div>
+  <script src="{{ "component-splide.js"  | asset_url }}" defer></script>
+
 {% schema %}
     {
         "name": "Hotspot and slider",
