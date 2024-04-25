@@ -8,58 +8,36 @@
         "padding_bottom": 0
       }
     },
-    "week7_l2_azCxjp": {
+    "week7_l2_8zWNTn": {
       "type": "week7-l2",
       "blocks": {
-        "dots_KAVHjE": {
+        "dots_NRmB93": {
           "type": "Dots",
           "settings": {
-            "primary_left_position": 42,
+            "primary_left_position": 37,
             "primary_top_position": 19,
             "dot_product": "goggles"
           }
         },
-        "dots_XDFPPH": {
+        "dots_MJrKye": {
           "type": "Dots",
           "settings": {
-            "primary_left_position": 93,
-            "primary_top_position": 67,
-            "dot_product": "skate-board"
-          }
-        },
-        "dots_iJ4jxH": {
-          "type": "Dots",
-          "settings": {
-            "primary_left_position": 36,
-            "primary_top_position": 9,
+            "primary_left_position": 39,
+            "primary_top_position": 12,
             "dot_product": "winter-cap"
-          }
-        },
-        "dots_xAHREn": {
-          "type": "Dots",
-          "settings": {
-            "primary_left_position": 26,
-            "primary_top_position": 41,
-            "dot_product": "winter-jacket"
           }
         }
       },
       "block_order": [
-        "dots_KAVHjE",
-        "dots_XDFPPH",
-        "dots_iJ4jxH",
-        "dots_xAHREn"
+        "dots_NRmB93",
+        "dots_MJrKye"
       ],
       "settings": {
-        "heading": "Shop the look",
         "desktop_image": "shopify://shop_images/background-image.png",
-        "padding_top": 30,
-        "padding_bottom": 30,
         "product_list": [
           "goggles",
           "skate-board",
-          "winter-cap",
-          "winter-jacket"
+          "winter-cap"
         ],
         "auto_play": false,
         "show_pagination": false,
@@ -67,12 +45,14 @@
         "auto_play_duration": 2000,
         "perpage": 2,
         "gap": 5,
-        "Slide_animation": "slide"
+        "Slide_animation": "slide",
+        "padding_top": 30,
+        "padding_bottom": 30
       }
     }
   },
   "order": [
     "main",
-    "week7_l2_azCxjp"
+    "week7_l2_8zWNTn"
   ]
 }
