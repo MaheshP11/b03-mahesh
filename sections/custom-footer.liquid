@@ -1,6 +1,11 @@
 {{ 'custom-footer.css' | asset_url | stylesheet_tag }}
 
 <div class="custom-footer">
+  <div class="custom-footer-top-section">
+  <div class="custom-footer--top-section-text">
+    <h2>{{ section.settings.rich-text }}</h2>
+    <h4>{{ section.settings.text-content }}</h4>
+  </div>
   <div class="custom-footer--email-inputContainer">
     {% form 'customer'
       , class: 'newsletter-form' %}
@@ -56,6 +61,7 @@
       {%- endif -%}
     {% endform %}
   </div>
+  </div>
   <div class="custom-footer--navContainer">
     {% for block in section.blocks %}
       {{ block.settings.title }}
@@ -80,15 +86,22 @@
     "class": "section",
     "settings": [
       {
-        "type": "image_picker",
-        "id": "desktop_image",
-        "label": "Store image"
-      }, {
+        "type": "richtext",
+        "id": "rich-text",
+        "label": "Enter the Text"
+      },
+      {
+        "type": "text",
+        "id": "text-content",
+        "label": "Enter the sub text"
+      },
+      {
         "type": "text",
         "id": "button_label",
         "label": "Button label",
         "default": "Subscribe"
-      }, {
+      },
+      {
         "type": "richtext",
         "id": "description",
         "label": "Description"

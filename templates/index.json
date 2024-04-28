@@ -6,7 +6,7 @@
         "slide_FCADGy": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hero_section_2160x_2bb9d131-6372-49d1-b575-4380495b915d.webp",
+            "image": "shopify://shop_images/hero_section_2160x_2bb9d131-6372-49d1-b575-4380495b915d.webp",
             "heading": "An Effortless Shopping Experience",
             "heading_size": "h1",
             "subheading": "Start Selling More Online",
@@ -24,7 +24,7 @@
         "slide_ezTKNq": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hero_section_2160x_1.webp",
+            "image": "shopify://shop_images/hero_section_2160x_1.webp",
             "heading": "An Effortless Shopping Experience",
             "heading_size": "h1",
             "subheading": "Start Selling More Online",
@@ -61,37 +61,37 @@
         "block_xNzgxf": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_47_200x_2.webp"
+            "image": "shopify://shop_images/image_47_200x_2.webp"
           }
         },
         "block_iXJcnb": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_48_200x_86d6bf3a-a0ba-4a51-abca-3bda3ebfb335.webp"
+            "image": "shopify://shop_images/image_48_200x_86d6bf3a-a0ba-4a51-abca-3bda3ebfb335.webp"
           }
         },
         "block_ae9Dxc": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_51_200x_a88a8424-930c-46e2-b167-8425abe3e9fa.webp"
+            "image": "shopify://shop_images/image_51_200x_a88a8424-930c-46e2-b167-8425abe3e9fa.webp"
           }
         },
         "block_c3EQDp": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-1_1_720x_e37aaf7a-7db4-46a5-a303-a575391a3743.webp"
+            "image": "shopify://shop_images/logo-1_1_720x_e37aaf7a-7db4-46a5-a303-a575391a3743.webp"
           }
         },
         "block_gweHet": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/logo-2_720x_14b99cbc-f3ec-4640-b7a4-24fe640e0163.webp"
+            "image": "shopify://shop_images/logo-2_720x_14b99cbc-f3ec-4640-b7a4-24fe640e0163.webp"
           }
         },
         "block_XLdd9H": {
           "type": "block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_47_200x_c54c7a9f-102d-49b0-acb3-261fe7dbe903.webp"
+            "image": "shopify://shop_images/image_47_200x_c54c7a9f-102d-49b0-acb3-261fe7dbe903.webp"
           }
         }
       },
@@ -104,7 +104,7 @@
         "block_XLdd9H"
       ],
       "settings": {
-        "rich_text": "<p>Featured In<\/p>"
+        "rich_text": "<p>Featured In</p>"
       }
     },
     "photo_flex_iRCGfT": {
@@ -113,9 +113,9 @@
         "block_zcgBww": {
           "type": "block",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
-            "heading": "<p>Built for Comfort<\/p><p><\/p>",
+            "image_desktop": "shopify://shop_images/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
+            "image_mobile": "shopify://shop_images/Image_768x_cfeec959-2f7b-4813-bbd7-86224667b4fd.webp",
+            "heading": "<p>Built for Comfort</p><p></p>",
             "sub_heading": "Bringing you the best of ethically sourced fashion from the best designers",
             "button_label": "Shop Now",
             "button_link": "#"
@@ -124,9 +124,9 @@
         "block_VnTmyw": {
           "type": "block",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
-            "heading": "<p>Better for the planet<\/p>",
+            "image_desktop": "shopify://shop_images/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+            "image_mobile": "shopify://shop_images/Image_1_480x_76f5a8c0-8798-4448-a844-90dee0dab039.webp",
+            "heading": "<p>Better for the planet</p>",
             "sub_heading": "Committed to sustainability from the ground up. From recycled packaging and fibers.",
             "button_label": "Learn More",
             "button_link": "#"
@@ -143,21 +143,11 @@
       "settings": {
         "header": "Photo flex section"
       }
-    },
-    "custom_liquid_Hwqkaa": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "{% if customer.id %}\n  <p>Customer logged in<\/p>\n{% else %}\n  <p> Customer didn't logged in <\/p>\n{% endif %}",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "slideshow_DV9bk9",
     "featured_in_FqTxdT",
-    "photo_flex_iRCGfT",
-    "custom_liquid_Hwqkaa"
+    "photo_flex_iRCGfT"
   ]
 }
