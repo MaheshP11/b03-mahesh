@@ -1,4 +1,7 @@
 
+.custom-footer--navContainer{
+    display: flex;
+}
 .custom-footer-top-section{
     display: flex;
 }
