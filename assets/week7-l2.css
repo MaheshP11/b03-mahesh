@@ -202,6 +202,11 @@
   /* width: 74%; */
   border-radius: 10px;
 }
+.btn{
+  background-color: black;
+    color: white;
+    padding: 5px;
+}
 @media screen and (max-width:750px) {
   .shop-the-look__product {
       /* border: 1px solid red; */
